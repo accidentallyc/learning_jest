@@ -9,8 +9,8 @@ test("basic", async () => {
   const minus = screen.getByRole("button", {name: "-"});
 
   // need to wrap because test is asynchronous
-  act(() => {
+  await waitFor(() => {
     plus.click();
+    expect(screen.getByRole("heading", {name: "1"})).toBeInTheDocument();
   });
-  expect(screen.getByRole("heading", {name: "1"})).toBeInTheDocument();
 });

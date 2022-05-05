@@ -2,7 +2,7 @@ import {exportedClass, exportedComponent, exportedFunction, exportedObject, expo
 
 jest.mock('./randomModule', () => {
   return {
-    /* ...jest.requireActual('./randomModule'), */
+    ...jest.requireActual('./randomModule'),
     exportedFunction: function _factoryReplacedFunction () { },
   }
 });
